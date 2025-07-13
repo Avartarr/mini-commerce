@@ -14,7 +14,13 @@ async function getProduct(slug: string): Promise<Product | undefined> {
   return products.find((p) => p.slug === slug);
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+interface ProductPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function ProductPage({ params }: ProductPageProps) {
   const { addToCart } = useStore();
   
   const { data: product, isLoading, isError } = useQuery<Product | undefined>({
