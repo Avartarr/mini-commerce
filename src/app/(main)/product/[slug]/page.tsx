@@ -14,15 +14,9 @@ async function getProduct(slug: string): Promise<Product | undefined> {
   return products.find((p) => p.slug === slug);
 }
 
-interface ProductPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage({ params }: { params: { slug: string } }) {
   const { addToCart } = useStore();
-  
+
   const { data: product, isLoading, isError } = useQuery<Product | undefined>({
     queryKey: ['product', params.slug],
     queryFn: () => getProduct(params.slug),
@@ -36,9 +30,9 @@ export default function ProductPage({ params }: ProductPageProps) {
     <div className="container mx-auto py-8 px-4">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8">
-          <Image 
-            src={product.image} 
-            alt={product.name} 
+          <Image
+            src={product.image}
+            alt={product.name}
             width={600}
             height={600}
             className="w-full h-auto object-contain"
