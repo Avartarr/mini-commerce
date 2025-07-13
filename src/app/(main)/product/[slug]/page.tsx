@@ -14,7 +14,12 @@ async function getProduct(slug: string): Promise<Product | undefined> {
   return products.find((p) => p.slug === slug);
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+
+export default function ProductPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { addToCart } = useStore();
 
   const { data: product, isLoading, isError } = useQuery<Product | undefined>({
@@ -23,7 +28,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   });
 
   if (isLoading) return <div className="text-center py-8">Loading...</div>;
-  if (isError) return <div className="text-center py-8 text-red-500">Error loading products</div>;
+  if (isError) return <div className="text-center py-8 text-red-500">Error loading product</div>;
   if (!product) return <div className="text-center py-8">Product not found</div>;
 
   return (
