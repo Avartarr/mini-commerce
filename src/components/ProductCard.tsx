@@ -5,8 +5,13 @@ import { useStore } from '@/store/store';
 import { motion } from 'framer-motion';
 import { toast } from '@/components/ui/toast';
 import Image from 'next/image';
+import { Product } from '@/types';
 
-export function ProductCard({ product }: { product: any }) {
+interface ProductCardProps {
+  product: Product;
+}
+
+export function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useStore();
 
   const handleAddToCart = () => {

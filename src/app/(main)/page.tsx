@@ -5,8 +5,9 @@ import { CategoryFilter } from '@/components/ui/CategoryFilter';
 import { SkeletonGrid } from '@/components/ui/skeleton';
 import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'next/navigation';
+import { Product } from '@/types';
 
-async function getProducts() {
+async function getProducts(): Promise<Product[]> {
   const res = await fetch('/data/products.json');
   if (!res.ok) {
     throw new Error('Failed to fetch products');
@@ -23,28 +24,25 @@ export default function Home() {
     data: products,
     isLoading,
     isError,
-  } = useQuery({
+  } = useQuery<Product[]>({
     queryKey: ['products', query, category],
     queryFn: getProducts,
   });
 
-
-  const filteredProducts = products
-    ?.filter((product: any) => {
-      const matchesSearch = query
-        ? product.name.toLowerCase().includes(query.toLowerCase()) ||
-          product.description.toLowerCase().includes(query.toLowerCase())
-        : true;
-      const matchesCategory = category
-        ? product.category === category
-        : true;
-      return matchesSearch && matchesCategory;
-    });
-
+  const filteredProducts = products?.filter((product) => {
+    const matchesSearch = query
+      ? product.name.toLowerCase().includes(query.toLowerCase()) ||
+        product.description.toLowerCase().includes(query.toLowerCase())
+      : true;
+    const matchesCategory = category
+      ? product.category === category
+      : true;
+    return matchesSearch && matchesCategory;
+  });
 
   const categories = [
-    ...new Set(products?.map((product: any) => product.category)),
-  ];
+    ...new Set(products?.map((product) => product.category)),
+  ] as string[];
 
   if (isError) {
     return (
@@ -59,12 +57,10 @@ export default function Home() {
   return (
     <main className="container mx-auto py-8 px-4">
       <div className="flex flex-col md:flex-row gap-8">
-
         <aside className="w-full md:w-64 space-y-6">
           <SearchBar />
           <CategoryFilter categories={categories} />
         </aside>
-
 
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-6">Our Products</h1>
@@ -79,7 +75,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts?.map((product: any) => (
+              {filteredProducts?.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>

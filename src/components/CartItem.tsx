@@ -1,12 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import type { CartItem } from '@/types';
 
-type CartItemProps = {
-  item: any;
+interface CartItemProps {
+  item: CartItem;
   onRemove: (id: number) => void;
   onUpdateQuantity: (id: number, quantity: number) => void;
-};
+}
+
 
 export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
   return (

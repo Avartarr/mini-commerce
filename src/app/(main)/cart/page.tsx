@@ -6,7 +6,7 @@ import { CartItem } from '@/components/CartItem';
 import Link from 'next/link';
 
 export default function CartPage() {
-  const { cart, removeFromCart, updateQuantity, clearCart } = useStore();
+  const { cart, removeFromCart, updateQuantity } = useStore();
   const isHydrated = useHydration();
 
   const subtotal = cart.reduce(
