@@ -23,7 +23,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   });
 
   if (isLoading) return <div className="text-center py-8">Loading...</div>;
-  if (isError) return <div className="text-center py-8 text-red-500">Error loading product</div>;
+  if (isError) return <div className="text-center py-8 text-red-500">Error loading products</div>;
   if (!product) return <div className="text-center py-8">Product not found</div>;
 
   return (
