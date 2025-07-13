@@ -37,7 +37,7 @@ export default function CheckoutPage() {
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-          <div className="bg-gray-50 p-6 rounded-lg mb-6">
+          <div className="bg-gray-50 p-6 rounded-lg mb-6 text-black">
             {cart.map((item) => (
               <div key={item.id} className="flex justify-between py-2 border-b">
                 <span>
@@ -65,7 +65,7 @@ export default function CheckoutPage() {
         
         <div>
           <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
+          <div className="bg-gray-50 p-6 rounded-lg text-black">
             <div className="space-y-4">
               <div>
                 <label className="block mb-1">Card Number</label>

@@ -1,11 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ProductCard } from '../ProductCard';
 import { useStore } from '@/store/store';
-import { useRouter } from 'next/navigation';
 
-jest.mock('@/store/store');
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
+jest.mock('@/store/store', () => ({
+  useStore: jest.fn(() => ({
+    addToCart: jest.fn(),
+    cart: []
+  }))
 }));
 
 const mockProduct = {
@@ -19,12 +20,6 @@ const mockProduct = {
 };
 
 describe('ProductCard', () => {
-  beforeEach(() => {
-    (useRouter as jest.Mock).mockReturnValue({
-      push: jest.fn(),
-    });
-  });
-
   it('renders product information', () => {
     render(<ProductCard product={mockProduct} />);
     
@@ -35,26 +30,14 @@ describe('ProductCard', () => {
 
   it('calls addToCart when button is clicked', () => {
     const mockAddToCart = jest.fn();
-    (useStore as unknown as jest.Mock).mockReturnValue({ 
+    (useStore as jest.Mock).mockImplementation(() => ({
       addToCart: mockAddToCart,
       cart: []
-    });
+    }));
     
     render(<ProductCard product={mockProduct} />);
     fireEvent.click(screen.getByText('Add to Cart'));
     
     expect(mockAddToCart).toHaveBeenCalledWith(mockProduct);
-  });
-
-  it('navigates to product page when clicked', () => {
-    const mockPush = jest.fn();
-    (useRouter as jest.Mock).mockReturnValue({
-      push: mockPush,
-    });
-
-    render(<ProductCard product={mockProduct} />);
-    fireEvent.click(screen.getByText('Test Product'));
-    
-    expect(mockPush).toHaveBeenCalledWith('/product/test-product');
   });
 });

@@ -28,7 +28,7 @@ export default function Home() {
     queryFn: getProducts,
   });
 
-  // Filter products based on search query and category
+
   const filteredProducts = products
     ?.filter((product: any) => {
       const matchesSearch = query
@@ -41,7 +41,7 @@ export default function Home() {
       return matchesSearch && matchesCategory;
     });
 
-  // Get unique categories for filter
+
   const categories = [
     ...new Set(products?.map((product: any) => product.category)),
   ];
@@ -59,13 +59,13 @@ export default function Home() {
   return (
     <main className="container mx-auto py-8 px-4">
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Sidebar with filters */}
+
         <aside className="w-full md:w-64 space-y-6">
           <SearchBar />
           <CategoryFilter categories={categories} />
         </aside>
 
-        {/* Product grid */}
+
         <div className="flex-1">
           <h1 className="text-3xl font-bold mb-6">Our Products</h1>
           {isLoading ? (

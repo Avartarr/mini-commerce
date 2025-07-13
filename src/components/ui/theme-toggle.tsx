@@ -4,11 +4,11 @@ import { useTheme } from '@/hooks/useTheme';
 import { Moon, Sun } from 'lucide-react';
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <button
-      onClick={toggleTheme}
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
     >

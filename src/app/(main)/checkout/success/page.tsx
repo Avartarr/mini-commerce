@@ -14,10 +14,10 @@ export default function SuccessPage() {
     <div className="container mx-auto py-12 text-center">
       <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow">
         <div className="text-green-500 text-6xl mb-4">✓</div>
-        <h1 className="text-3xl font-bold mb-4">Thank You!</h1>
-        <p className="mb-6">Your order has been placed successfully.</p>
+        <h1 className="text-3xl font-bold mb-4 text-black">Thank You!</h1>
+        <p className="mb-6 text-black">Your order has been placed successfully.</p>
         {orderId && (
-          <p className="mb-6">
+          <p className="mb-6 text-black">
             Order ID: <span className="font-mono font-bold">{orderId}</span>
           </p>
         )}

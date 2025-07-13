@@ -11,7 +11,6 @@ export function SearchBar() {
   const router = useRouter()
   const [query, setQuery] = useState('')
 
-  // Initialize from URL on mount
   useEffect(() => {
     setQuery(searchParams.get('query') || '')
   }, [searchParams])
@@ -36,7 +35,7 @@ export function SearchBar() {
           setQuery(e.target.value)
           handleSearch(e.target.value)
         }}
-        className="w-full pl-4 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full pl-4 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
       />
     <div className="absolute right-3 top-2.5 text-gray-400">
     <svg

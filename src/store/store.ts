@@ -57,7 +57,6 @@ export const useStore = create<StoreState>()(
   )
 );
 
-// Derived state selectors
 export const cartTotalItems = () => useStore.getState().cart.reduce((sum, item) => sum + item.quantity, 0);
 export const cartSubtotal = () => useStore.getState().cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-export const cartTotal = () => cartSubtotal() * 1.1; // Including 10% tax
+export const cartTotal = () => cartSubtotal() * 1.1; 

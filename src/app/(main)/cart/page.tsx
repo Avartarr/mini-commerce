@@ -43,8 +43,8 @@ export default function CartPage() {
           </div>
           
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-            <div className="space-y-2 mb-6">
+            <h2 className="text-xl font-semibold mb-4 text-black">Order Summary</h2>
+            <div className="space-y-2 mb-6 text-black">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>${subtotal.toFixed(2)}</span>

@@ -29,10 +29,12 @@ export default function RootLayout({
             <header className="bg-white dark:bg-gray-800 shadow-sm">
               <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <h1 className="text-xl font-bold">Mini-Commerce</h1>
-                {/* <ThemeToggle /> */}
-                <Link href="/cart" className="relative p-2">
-                      <ShoppingCart className="h-5 w-5" />
+                <div className="flex items-center space-x-4">
+                  <Link href="/cart" className="relative p-2">
+                    <ShoppingCart className="h-5 w-5" />
                   </Link>
+                  <ThemeToggle />
+                </div>
               </div>
             </header>
             <main>{children}</main>
