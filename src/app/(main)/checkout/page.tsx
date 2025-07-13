@@ -20,7 +20,6 @@ export default function CheckoutPage() {
 
   const handlePlaceOrder = () => {
     setIsProcessing(true);
-    // Simulate API call
     setTimeout(() => {
       const orderId = `ORD-${Math.floor(Math.random() * 1000000)}`;
       setOrderId(orderId);
@@ -67,7 +66,6 @@ export default function CheckoutPage() {
         <div>
           <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
           <div className="bg-gray-50 p-6 rounded-lg">
-            {/* Simple mock payment form */}
             <div className="space-y-4">
               <div>
                 <label className="block mb-1">Card Number</label>

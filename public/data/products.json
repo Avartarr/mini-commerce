@@ -5,7 +5,9 @@
         "name": "Wireless Headphones",
         "price": 99.99,
         "description": "Premium noise-cancelling wireless headphones.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359681/41lArSiD5hL_qg9tna.jpg"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359681/41lArSiD5hL_qg9tna.jpg",
+        "category": "electronics",
+        "rating": 4.5
       },
       {
         "id": 2,
@@ -13,7 +15,9 @@
         "name": "Samsung Galaxy S23",
         "price": 1000,
         "description": "Sleek and powerful Android Smartphone.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359707/51GvkWOYjIL._UF894_1000_QL80__vg45tb.jpg"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359707/51GvkWOYjIL._UF894_1000_QL80__vg45tb.jpg",
+        "category": "phone",
+        "rating": 4.5
       },
       {
         "id": 3,
@@ -21,7 +25,9 @@
         "name": "Apple Watch",
         "price": 300,
         "description": "Smart watch with health tracking features.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359725/MXLN3ref_VW_34FR_watch-case-42-aluminum-rosegold-nc-s10_VW_34FR_watch-face-42-aluminum-rosegold-s10_VW_34FR_o9hbog.png"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359725/MXLN3ref_VW_34FR_watch-case-42-aluminum-rosegold-nc-s10_VW_34FR_watch-face-42-aluminum-rosegold-s10_VW_34FR_o9hbog.png",
+        "category": "watch",
+        "rating": 4.5
       },
       {
         "id": 4,
@@ -29,7 +35,9 @@
         "name": "Sony Headphones",
         "price": 100,
         "description": "Headphones with noise-cancelling technology.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359750/Sony-WH-1000XM5-The-Best-Wireless-Noise-Canceling-Headphones-Silver_0de627ff-c101-463c-8958-fa565fb0e50a.8b05d95380294e43026de4071a873971_thfsjs.jpg"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359750/Sony-WH-1000XM5-The-Best-Wireless-Noise-Canceling-Headphones-Silver_0de627ff-c101-463c-8958-fa565fb0e50a.8b05d95380294e43026de4071a873971_thfsjs.jpg",
+        "category": "electronics",
+        "rating": 4.5
       },
       {
         "id": 5,
@@ -37,7 +45,9 @@
         "name": "iPhone 16 Pro",
         "price": 1500,
         "description": "The latest iPhone with advanced features.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359775/iphone-15-6c_jtxgl7.jpg"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359775/iphone-15-6c_jtxgl7.jpg",
+        "category": "phone",
+        "rating": 4.5
       },
       {
         "id": 6,
@@ -45,7 +55,9 @@
         "name": "Dell Laptop",
         "price": 2499.99,
         "description": "Dell Laptop with high performance.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359791/notebook-db16250nt-fpr-bl-gallery-2_uenhsb.png"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359791/notebook-db16250nt-fpr-bl-gallery-2_uenhsb.png",
+        "category": "laptop",
+        "rating": 4.5
       },
       {
         "id": 7,
@@ -53,6 +65,8 @@
         "name": "HP Elitebook",
         "price": 2700,
         "description": "HP Elitebook Laptop with high performance.",
-        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359807/c08951976_1750x1285_rmpimc.jpg"
+        "image": "https://res.cloudinary.com/dqct6vekp/image/upload/v1752359807/c08951976_1750x1285_rmpimc.jpg",
+        "category": "laptop",
+        "rating": 4.5
       }
 ]

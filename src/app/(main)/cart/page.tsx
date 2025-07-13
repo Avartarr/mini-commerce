@@ -2,7 +2,7 @@
 
 import { useStore } from '@/store/store';
 import { useHydration } from '@/hooks/useHydration';
-import { CartItem } from '@/components/cartItem';
+import { CartItem } from '@/components/CartItem';
 import Link from 'next/link';
 
 export default function CartPage() {

@@ -15,6 +15,8 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
         <Image
           src={item.image}
           alt={item.name}
+          width={80}
+          height={80}
           className="w-full h-full object-contain"
         />
       </div>
