@@ -7,13 +7,25 @@ import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'next/navigation';
 import { Product } from '@/types';
 
-async function getProducts(): Promise<Product[]> {
+// async function getProducts(): Promise<Product[]> {
+//   const res = await fetch('/data/products.json');
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch products');
+//   }
+//   return res.json();
+// }
+    async function getProducts(): Promise<Product[]> {
+  if (typeof window === 'undefined') {
+    return [];
+  }
+
   const res = await fetch('/data/products.json');
   if (!res.ok) {
     throw new Error('Failed to fetch products');
   }
   return res.json();
 }
+
 
 export default function Home() {
   const searchParams = useSearchParams();
