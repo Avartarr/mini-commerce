@@ -1,4 +1,5 @@
 'use client';
+
 import { ProductCard } from '@/components/ProductCard';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { CategoryFilter } from '@/components/ui/CategoryFilter';
@@ -6,19 +7,9 @@ import { SkeletonGrid } from '@/components/ui/skeleton';
 import { useQuery } from '@tanstack/react-query';
 import { useSearchParams } from 'next/navigation';
 import { Product } from '@/types';
+import { Suspense } from 'react';
 
-// async function getProducts(): Promise<Product[]> {
-//   const res = await fetch('/data/products.json');
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch products');
-//   }
-//   return res.json();
-// }
-    async function getProducts(): Promise<Product[]> {
-  if (typeof window === 'undefined') {
-    return [];
-  }
-
+async function getProducts(): Promise<Product[]> {
   const res = await fetch('/data/products.json');
   if (!res.ok) {
     throw new Error('Failed to fetch products');
@@ -26,8 +17,7 @@ import { Product } from '@/types';
   return res.json();
 }
 
-
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('query') || '';
   const category = searchParams.get('category') || '';
@@ -95,5 +85,13 @@ export default function Home() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<SkeletonGrid />}>
+      <HomeContent />
+    </Suspense>
   );
 }
